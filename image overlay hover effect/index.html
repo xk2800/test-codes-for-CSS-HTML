@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head><title>image overlay hover effect</title>
+    
+    <style>
+        .container{
+            width: 40%;
+            border: 1px solid;
+            /*/for centering the container*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+        .overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: black;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+            cursor: pointer;
+        }
+        .overlayContent{
+            /*for centering the content*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /**/
+            color: white;
+            font-family: verdana;
+            text-align: center;
+        }
+        .container:hover .overlay{
+            opacity: 0.8;
+        }
+    </style>
+
+    </head>
+<body>
+
+    <div class="container">
+        <img src="test.jpg" alt="TEST">
+            <div class="overlay">
+                <div class="overlayContent">
+                    <h1>TEST</h1>
+                    <p>testing 123 testing</p>
+                </div>
+            </div>
+    </div>
+
+</body>
+</html>

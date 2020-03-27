@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head><title>link hover effect</title>
+    
+    <style>
+        *{
+            text-decoration: none;
+        }
+        .link{
+            text-decoration: none;
+            color: black;
+            font-size: 1.4em;
+            position: relative;
+            padding: 0 10px;
+            transition: 0.25s ease-in-out all;
+            font-weight: 300;
+        }
+        .link::before{
+            content: "";
+            position: absolute;
+            background: #ec3f7a;
+            width: 2px;
+            height: 100%;
+            left: 0;
+            transition: 0.2s ease-in-out all;
+            z-index: -1;
+        }
+        .link:hover::before{
+            width: 100%;
+        }
+        .link:hover{
+            color: #ffffff;
+            font-size: 1.6em;
+        }
+
+    </style>
+
+    </head>
+
+<body>
+
+    <div class="link" id="link"><a href="https://www.digi.com.my/">Go to website</a></div>
+
+</body>
+</html>

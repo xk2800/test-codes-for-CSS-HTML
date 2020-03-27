@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head><title>3D word effect</title>
+    <style>
+        .three-d{
+            font-size: 50px;
+            margin: 5px;
+            padding: 20px;
+            color: #fff;
+            transform: skew(-10deg, -18deg)
+            rotate(-9deg);
+            background-color: green;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+            text-shadow: 0 0 2px black;
+            text-align: center;
+            
+        }
+        .three-d:hover{
+            text-shadow: -5px -5px 1px black;
+            transform: skew(-10deg, -18deg)
+            rotate(-9deg);
+            box-shadow: -5px -5px 0 0 #fff;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <div class="three-d">Javascript</div>
+    <div class="three-d">Room</div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head><title>smooth scrolling</title>
+    
+    <style>
+        *{
+            scroll-behavior: smooth; /*enable smooth scroll*/
+        }
+        .nav{
+            background-color: yellow;
+            width: 200px;
+            position: fixed;
+            left: 0;
+        }
+        .box{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #one, #three{
+            background-color: skyblue;
+        }
+        #two{
+            background-color: orange;
+        }
+    </style>
+
+    </head>
+<body>
+
+    <div class="nav">
+        <a href="#one">One</a>
+        <a href="#two">Two</a>
+        <a href="#three">Three</a>
+    </div>
+
+    <div id="one" class="box">
+        <p><h1>One</h1></p>
+    </div>
+
+    <div id="two" class="box">
+        <p><h1>Two</h1></p>
+    </div>
+
+    <div id="three" class="box">
+        <p><h1>Three</h1></p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+.hamburger-part{
+    background: #881238;
+    width: 20px;
+    height: 3px;
+    margin-top: 6px;
+    border-radius: 2px;
+}
+.hamburger-menu{
+    width: 20px;
+    padding: 6px;
+    height: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+.hamburger-part{
+    transition: 400ms ease;
+}
+.hamburger-part:first-of-type{
+    margin-top: 0px;
+}
+.mobile-menu-opened .hamburger-part:nth-child(1){
+    transform: translateY(9px) translateX(0px)
+    rotate(315deg);
+}
+.mobile-menu-opened .hamburger-part:nth-child(2){
+    transform:rotate(45deg);
+}
+.mobile-menu-opened .hamburger-part:nth-child(3){
+    display: none;
+}

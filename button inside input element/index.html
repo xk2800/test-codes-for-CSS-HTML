@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>button inside input element</title>
+    
+    <style>
+        body{
+            background-color: black;
+            height: 100%;
+        /*centering the content*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        label{
+            position: relative;
+        }
+        input[type="text"]{
+            border: none;
+            width: 400px;
+            height: 40px ;
+            padding: 0 15px;
+        }
+        button{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            background-color: green;
+            color: white;
+            padding: 0 15px;
+            letter-spacing: 1.2px;
+            font-family: cursive;
+            font-size: 12px;
+            border: none;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+<body>
+    <label>
+        <input type="text" placeholder="Enter your email..">
+        <button>SUBSCRIBE</button>
+    </label>   
+</body>
+</html>

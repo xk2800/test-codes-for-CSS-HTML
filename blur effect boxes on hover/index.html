@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head><title>blur effect boxes on hover</title>
+    
+        <style>
+            body{
+                font-weight: bold;
+                font-size: 50px;
+                text-align: center;
+            }
+            .box-wrap{
+                display: flex;
+                margin: 10%;
+                align-items: center;
+                justify-content: center;
+            }
+            .box{
+                padding: 80px;
+                margin: 2%;
+                width: 30%;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+                border-radius: 8px;
+                transition: 0.2s all;
+            }
+            .box-wrap:hover .box{
+                filter: blur(3px);
+                opacity: 0.5;
+                transform: scale(0.98);
+                box-shadow: none;
+            }
+            .box-wrap .box:hover{
+                transform: scale(1);
+                filter: blur(0px);
+                opacity: 1;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            }
+        </style>
+
+    </head>
+<body>
+
+    <div class="box-wrap">
+        <div class="box">
+            <p>I</p>
+        </div>
+        <div class="box">
+            <p>LOVE</p>
+        </div>
+        <div class="box">
+            <p>CSS</p>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>>
+<html>
+    <head><title>
+        custom checkbox
+    </title>
+
+    <style>
+        .container-checkbox{
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .container-checkbox input{
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+        .checkmark{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background: #881238;
+            box-shadow: 0px 4px 12px rgba(136, 18, 56, 0.15);
+            border-radius: 6px;
+            transition: 320ms ease;
+        }
+        .container-checkbox:hover input ~ .checkmark{
+            background: #A81F4A;
+            box-shadow: 0px 4px 12px rgba(168, 31, 74, 0.2);
+        }
+        .container-checkbox input:checked ~ .checkmark{
+            background: #EE4540;
+            box-shadow: 0px 4px 12px rgba(238, 69, 64, 0.15);
+        }
+        .checkmark:after{
+            content: "";
+            position: absolute;
+            opacity: 0;
+            transition: 280ms ease;
+        }
+        .container-checkbox input:checked ~ .checkmark:after{
+            opacity: 1;
+            transform: translateY(0px) rotate(45deg);
+        }
+        .container-checkbox .checkmark:after{
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: translateY(2px) rotate(45deg);
+            -ms-transform: translateY(2px) rotate(45deg);
+            transform: translateY(2px) rotate(45deg);
+        }
+    </style>
+
+</head>
+<body>
+
+    <label class="container-checkbox">
+        <input type="checkbox" checked>
+        <span class="checkmark"></span>
+    </label>
+    
+</body>
+</html>

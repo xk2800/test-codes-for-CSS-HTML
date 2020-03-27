@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>button transition </title>
+    <style>
+        .button{
+            -webkit-box-flex: 1;
+            position: relative;
+            padding: 20px;
+            border: 2px solid red;
+            text-align: center;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            -webkit-transition: 0.35s;
+            transform: 0.35s;
+        }
+        .button:hover:after{
+            left: -10%;
+            width: 120%;
+        }
+        .button:after{
+            position: absolute;
+            -webkit-transition: .35s;
+            transition: .35s ;
+            content: '';
+            width: 0;
+            top: 0;
+            height: 100%;
+            left: -10%;
+            -webkit-transform: skewY(15deg);
+            transform: skewX(15deg);
+            z-index: -1;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+  
+    <div class="button">button transition test</div>
+
+</body>
+</html>

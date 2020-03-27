@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head><title>simple slideshow using JS</title>
+    
+        <style>
+            .container{
+                /*FOR CENTERING THE CONTAINER*/
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .container img{
+                width: 100%;
+                height: auto;
+            }
+        </style>
+
+    </head>
+<body onload="interval()">
+
+    <div class="container">
+        <img src="test.jpg" id="slide">
+    </div> 
+
+    <script>
+        //array of images, can put as many image
+        let imagesArray = ["test.jpg", "testi2.png"];
+
+        //getting the image element
+        let img = document.getElementById("slide");
+
+        //defining a strating index
+        let i = 0;
+            function slideShow(){
+                img.src = imagesArray[i];
+                i = (i<imagesArray.length-1) ? i+1 : 0;
+            }
+        
+            //this function will be called by the "onload" event
+            function interval(){
+                setInterval(slideShow,1000);
+            } 
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>collapsable sidebar with icons</title>
+
+    <style>
+        .page{
+            position: relative;
+            width: 110vw;
+            min-height: 100vh ;
+        }
+        .nav{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 165px;
+            height: 100%;
+            background-color: #007EFF;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+            color: white;
+            transition: all .3s ease;
+        }
+        .logo{
+            font-size: 50px;
+            position: absolute;
+            top: 75px;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+            transition: all .3s linear;
+        }
+        .item{
+            margin: 20px 0 20px 20px;
+            display: flex;
+            overflow: hidden;
+        }
+        .item i{
+            font-size: 20px;
+        }
+        .item span{
+            font-weight: 300;
+            margin-left: 10px;
+        }
+        .nav.collapsed{
+            width: 60px;
+        }
+        .nav.collapsed .item{
+            margin: 20px auto;
+        }
+        .nav.collapsed .item span{
+            display: none;
+        }
+        .nav.collapsed .logo{
+            transform: translateX(-50%) scale(.7);
+        }
+
+        /*CSS IMAGE*/
+        img{
+            height: 50px;
+            width: 80px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="page">
+        <div id="nav" class="nav">
+            <div class="loop" onclick="collapseNav()">
+                <i class="fas fa-pizza-slice"><img src="test.jpg"></i>
+            </div>
+
+        <div class="item"><i class="fas fa-home"></i><img src="test.jpg"><span>Home</span></div>
+        <div class="item"><i class="fas fa-users"></i><img src="test.jpg"><span>User</span></div>
+        <div class="item"><i class="fas fa-bell"></i><img src="test.jpg"><span>Notification</span></div>
+        <div class="item"><i class="fas fa-book"></i><img src="test.jpg"><span>Books</span></div>
+        
+        </div>
+    </div>
+
+    <script>
+        const collapseNav = ( ) => {
+            document.getElementById("nav").classList.toggle("collapsed");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head><title>aniimated progress bar</title>
+    
+        <style>
+            .progress{
+                background: rgba(255, 255, 255, 0.1);
+                justify-content: flex-start;
+                align-items: center;
+                position: relative;
+                padding: 0 5px;
+                display: flex;
+                height: 40px;
+                width: 500px;
+            }
+            .progress-value{
+                animation: load 3s normal forwards infinite;
+                border-radius: 100px;
+                background: #fff;
+                width: 0;
+                height: 30px;
+            }
+            @keyframes load{
+                0% {width: 0;}
+                100% {width: 68%;}
+            }
+        </style>
+
+    </head>
+<body>
+
+    <div class="progress">
+        <div class="progress-value"></div>
+    </div>
+
+\
+</body>
+</html>

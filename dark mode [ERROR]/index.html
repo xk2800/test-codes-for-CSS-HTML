@@ -1,0 +1,35 @@
+<!DOCTYPE html>>
+<html>
+    <head><title>
+        dark mode 
+    </title>
+
+    <style>
+        /*set background color & text color of doc with var created*/
+        main{
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        /* using CSS variable to help trigger dark mode*/
+        :root{
+            --bg-color: #FFF;
+            --text-color:#000;
+        }
+        #dark-mode-toggle:checked + main{
+            --bg-color:#26242E;
+            --text-color:#FFF;
+        }
+    </style>
+
+</head>
+<body>
+
+    <input id="dar-mode-toggle" type="checkbox">
+
+    <main>
+        <h1>CSS DARK MODE</h1>
+        <label class="dark-mode-btn" for="dark-mode-toggle">Click Me!</label>
+    </main>
+    
+</body>
+</html>

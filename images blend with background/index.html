@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            images blend with background
+        </title>
+
+        <style>
+            section{
+                height: 100vh;
+                width: 100vw;
+                background-color: #101010;
+            }
+            .image{
+                width: 100%;
+                height: 55%;
+                background-image: url(test.jpg);
+                background-size: cover;
+                background-position: 50% 10%;
+                position: relative;
+            }
+            .image::after{
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                background: linear-gradient(transparent -30%, #101010);
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(-30%, transparent),to(#101010));
+            }
+        </style>
+
+    </head>
+<body>
+
+    <section>
+        <div class="image"><!--img src="test.jpg"--></div>
+    </section>
+
+</body>
+</html>

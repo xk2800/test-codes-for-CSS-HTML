@@ -1,0 +1,125 @@
+<!DOCTYPE html>>
+<html>
+    <head><title>
+        animated email form with validation
+    </title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: #f8fcff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+        }
+        .email-input-wrapper{
+            position: relative;
+        }
+        .form{
+            background: pink;
+            position: relative;
+            width: 250px;
+            overflow: hidden;
+            z-index: 10;
+            border-radius: 3px;
+        }
+        .email-input{
+            width: 100%;
+            border: 0;
+            font-size: 1.2em;
+            background: #EAF1FF;
+            outline: 0;
+            box-sizing: border-box;
+            padding: 10px 40px 10px 10px;
+            color: red;
+            font-weight: bold;
+        }
+        .send-button{
+            width: 100%;
+            position: relative;
+            background: #3A72AA;
+            color: white;
+            font-size: 1.2em;
+            font-weight: 300;
+            position: absolute;
+            padding: 10px 0;
+            left: 87%;
+            border: 0;
+            outline: 0;
+            transition: 0.3s ease-in-out all;
+            font-weight: 500;
+        }
+        .send-button:hover{
+            cursor: pointer;
+            background: #4284C6;
+        }
+        .send-envelope{
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateY(-50%);
+            transition: 0.1s ease-in-out all;
+        }
+        .hidden-envelope{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5em;
+            color: #3A72AA;
+        }
+        @keyframes fadeOut {
+            to {
+                top: 40%;
+                opacity: 0;
+            }            
+        }
+    </style>
+
+</head>
+<body>
+
+    <form class="form">
+        <input type="email" placeholder="Enter email here..." class="email-input" />
+        <button class="send-button" type="submit">
+            <i class="far fa-envelope send-envelope"></i>
+            Sent
+        </button>
+    </form>
+    <i class="far fa-envelope hidden-envelope"></i>
+    
+
+    <script>
+        const input = document.querySelector('.email-input');
+        const send_envelope = document.querySelector('.send-envelope');
+        const send_button = document.querySelector('.send-button');
+        const hidden_envelope = document.querySelector('.hidden-envelope');
+
+        const validateEmail = email => {
+            const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return emailRegex.test(email) ? true : false;
+        }
+        
+        input.addEventListener('keyup', e => {
+            const email = e.target.value;
+            !validateEmail(email)
+                ? send_envelope.style.color = '#0E1C2C'
+                : send_envelope.style.color = '#fff';
+        });
+
+    send_button.addEventListener('click', e => {
+        e.preventDefault();
+        if (validateEmail(input.value)) {
+            send_button.style.left = 0;
+            send_envelope.style.opacity = 0;
+            setTimeout(() => hidden_envelope.style.animation = '1s ease-in-out fadeOut forwards', 100);
+        }   });
+    </script>
+</body>
+</html>
